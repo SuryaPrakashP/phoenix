@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container-fluid" style='padding-top: 130px;'>
+  <div class='container'>
+  <h2 style="text-align: center;">Apply for job</h2>
+
+      {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}"><a style="color: green;">{{ message }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+  <div class='row'>
+
+
+<div class="col-md-6">		
+
+<form method="POST">
+<br></br>
+
+{% csrf_token %}
+{{form|crispy}}
+
+<label>&nbsp;</label><label>&nbsp;</label><label>&nbsp;</label>
+<input type ="submit"  name = "send" value = "Send"/>
+</form>
+
+</div>
+
+<div class="col-md-6">
+  <img src="{% static 'img/home/apply.jpg' %}" style="padding-top: 90px;">
+</div>
+
+</div>
+</div>
+
+<footer>
+      <div class="container-fluid" style='background-color:rgb(242, 241, 239);padding-top:30px;padding-bottom: 30px;'>
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">&copy;Copy rights reserved | Phoenix Analytics 2019 </span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://twitter.com/PhoenixAnalyti2" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/Phoenix-Analytics-894364120913698/?modal=admin_todo_tour" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/phoenix_analytics/ " target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <a>WWW.PHOENIXANALYTICS.COM</a>
+             <!--  <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+
+
+
+    </footer>
+
+{% endblock %}
