@@ -5,6 +5,11 @@ from django.contrib import messages
 from django.conf import settings
 from .forms import EmailForm
 from .models import Email
+from django.http import Http404
+from .serializers import EmailSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
 def home(request):
 	return render(request,'index.html')
@@ -14,43 +19,31 @@ def login(request):
 
 def car_page(request):
     if request.method == "POST":
-        form = EmailForm(request.POST)
+        form = EmailForm(request.POST, request.FILES)
         if form.is_valid():
-            xyz = form.save(commit=False)
-            xyz.save()
+            # xyz = form.save(commit=False)
+            form.save()
             messages.success(request, "Details Submitted successfully submitted")
             return redirect('car_page')
     else:
         form = EmailForm()
     return render(request, 'career.html', {'form': form})
 
-# def car_page(request):
-#     if request.method == 'POST':
-#         form = EmailForm(request.POST)
-#         if form.is_valid():
-#             # process form data
-#             obj = Email() #gets new object
-#             obj.first_name = form.cleaned_data['first_name']
-#             print(form.cleaned_data['first_name'])
-#             obj.last_name = form.cleaned_data['last_name']
-#             print(form.cleaned_data['last_name'])
-#             obj.email = form.cleaned_data['email']
-#             obj.Phone_number = form.cleaned_data['Phone_number']
-#             obj.College_name = form.cleaned_data['College_name']
-#             obj.Qualification = form.cleaned_data['Qualification']
-#             obj.attach = form.cleaned_data['attach']
-#             #finally save the object in db
-# #            obj.save()
-#             return render(request, 'career.html', {'form': form})
-#         else:
-#         	print("not is_valid")
-#         	return HttpResponseRedirect('/')
 
-    # else:
-    # 	form = EmailForm()
-    # 	return render(request, 'career.html', {'form': form})
+class EmailList(APIView):
+	def get(self, request, format=None):
+		users = Email.objects.all()
+		serializer = EmailSerializer(users, many=True)
+		return Response(serializer.data)
 
+	def post(self, request, format=None):
+		serializer = EmailSerializer(data=request.DATA)
+		if serializer.is_valid():
+			serializer.save()
+			return Response(serializer.data, status=status.HTTP_201_CREATED)
+			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+#
 
 def contact(request):
 	if request.method == 'POST':
