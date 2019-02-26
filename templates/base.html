@@ -310,6 +310,7 @@ span.psw {
 }
 .pa{
   font-family: 'Norwester';
+  color: orange;
 }
 
     
@@ -320,30 +321,30 @@ span.psw {
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top font-weight-bolder topnav" id="mainNav" style='background:linear-gradient(to left, #ffffff 0%, #ffffff 91%); padding-bottom: 0px;padding-right: 0px;'>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top font-weight-bolder " id="mainNav" style='background:linear-gradient(to left, #ffffff 0%, #ffffff 91%); padding-bottom: 0px;padding-right: 0px;'>
       <!-- <div class="container" navbar-brand> -->
-        <a class="navbar js-scroll-trigger pa" href="{% url 'home' %}"><img src="{% static 'img/pp1.png' %}" style="width: 75px;height: 75px;">Phoenix Analytics</a>
+        <a class="navbar js-scroll-trigger" href="{% url 'home' %}"><img src="{% static 'img/pp1.png' %}" style="width: 75px;height: 75px;color: orange;"><h2 class='pa ml-2' style="color: orange;"> Phoenix Analytics</h1></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
+            <li class="nav-item topnav">
               <a class="nav-link js-scroll-trigger font-weight-bolder text-primary " href='{% url "home" %}' href="#services">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item topnav">
               <a class="nav-link js-scroll-trigger font-weight-bolder text-primary" href="{% url 'car_page' %}">Careers</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item topnav">
               <a class="nav-link js-scroll-trigger font-weight-bolder text-primary" href='{% url "home" %}'>Squad</a>
             </li>
             
-            <li class="nav-item">
+            <li class="nav-item topnav">
               <a class="nav-link js-scroll-trigger font-weight-bolder text-primary" href="{% url 'contact' %}">Contact Us</a>
             </li>
 
-              <li class="nav-item js-scroll-trigger font-weight-bolder">
+              <li class="nav-item js-scroll-trigger font-weight-bolder topnav">
               <!-- <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Login</a> -->
             <a onclick="document.getElementById('id01').style.display='block'" class="nav-link js-scroll-trigger font-weight-bolder text-primary">Login</a>
 

@@ -16,10 +16,10 @@ def car_page(request):
     if request.method == "POST":
         form = EmailForm(request.POST)
         if form.is_valid():
-            form = form.save(commit=False)
-            form.save()
+            xyz = form.save(commit=False)
+            xyz.save()
             messages.success(request, "Details Submitted successfully submitted")
-            return redirect('/')
+            return redirect('car_page')
     else:
         form = EmailForm()
     return render(request, 'career.html', {'form': form})
