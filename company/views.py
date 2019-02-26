@@ -21,7 +21,6 @@ def car_page(request):
     if request.method == "POST":
         form = EmailForm(request.POST, request.FILES)
         if form.is_valid():
-            # xyz = form.save(commit=False)
             form.save()
             messages.success(request, "Details Submitted successfully submitted")
             return redirect('car_page')
