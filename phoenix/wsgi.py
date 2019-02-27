@@ -16,7 +16,7 @@ https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 # application = get_wsgi_application()
 
 import myapp.wsgi
-SCRIPT_NAME = '/home/phoenix/hercules-python'
+SCRIPT_NAME = '/home/phoenix/hercules'
 
 class PassengerPathInfoFix(object):
     """
@@ -35,7 +35,7 @@ class PassengerPathInfoFix(object):
         environ['PATH_INFO'] = request_uri[offset:].split('?', 1)[0]
         return self.app(environ, start_response)
 
-application = myapp.wsgi.application
+application = hercules.wsgi.application
 application = PassengerPathInfoFix(application)
 
 
