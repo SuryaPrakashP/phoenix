@@ -15,17 +15,17 @@
 {% endif %}
   <div class='row'>
 
-<div class="col-md-6">		
+<div class="col-md-6 col-sm-6">		
 <form method="POST" enctype="multipart/form-data"><br></br>
   {% csrf_token %}
   {{form|crispy}}
 
 <label>&nbsp;</label><label>&nbsp;</label><label>&nbsp;</label>
-<input type ="submit"  name = "send" value = "Send"/>
+<input type ="submit"  class='btn btn-info' name = "send" value = "Send"/>
 </form>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-6 col-sm-6">
   <img src="{% static 'img/home/apply.jpg' %}" style="padding-top: 90px;">
 </div>
 
@@ -59,7 +59,7 @@
           </div>
           <div class="col-md-4">
             <ul class="list-inline quicklinks">
-              <span class="copyright">www.phoenixanalytics.in</span>
+              <span class="copyright" ><a  href='{% url "home" %}' style='color:black'>www.phoenixanalytics.in</a></span>
              <!--  <li class="list-inline-item">
                 <a href="#">Privacy Policy</a>
               </li>

@@ -7,6 +7,6 @@ urlpatterns = [
     path('login',views.login,name='login'),
     path('career',views.car_page,name='car_page'),
     path('contact_us',views.contact,name='contact'),
-    path('email',views.EmailList.as_view()),
+    # path('api/data',views.EmailList.as_view()),
     
 ]

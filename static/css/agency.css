@@ -15,7 +15,7 @@ p {
 }
 
 a {
-  color: #fed136;
+  color: #edba0b; /* fed136 */
 }
 
 a:hover {
@@ -653,11 +653,11 @@ section#contact :-ms-input-placeholder {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-footer {
-  padding: 25px 0;
+/*footer {
+  padding:0;
   text-align: center;
 }
-
+*/
 footer span.copyright {
   font-size: 90%;
   line-height: 40px;

@@ -26,7 +26,7 @@ SECRET_KEY = '6&qn)+-*6a6i$sf%1%4wp!x0gasq1xw5004#9%&%d5+xhq!7+d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.phoenixanalytics.in']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'company',
     'crispy_forms',
     'rest_framework',
+    'phonenumber_field',
 
 ]
 
@@ -75,7 +76,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'phoenix.wsgi.application'
 
 
-# Database
+# # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
@@ -88,7 +89,7 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'djangoproject',
+#         'NAME': 'dj',
 #         'USER': 'root',
 #         'PASSWORD': '',
 #         'HOST': 'localhost',
@@ -114,6 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
 
 
 # Internationalization

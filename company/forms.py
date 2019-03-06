@@ -6,7 +6,7 @@ class EmailForm(forms.ModelForm):
 		model = Email
 
 		fields = ('first_name','last_name','email','Phone_number','College_name',
-			'Qualification')
+			'Qualification','resume')
 
 
 
