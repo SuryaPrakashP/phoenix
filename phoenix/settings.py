@@ -79,13 +79,19 @@ WSGI_APPLICATION = 'phoenix.wsgi.application'
 # # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'phoenixanalytics',
+        'USER': 'phoenixanalytics',
+        'PASSWORD': 'Digitalocean@1',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
+<<<<<<< HEAD
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -97,6 +103,8 @@ DATABASES = {
 #     }
 # }
 
+=======
+>>>>>>> 9d8f6fa8ea11d7eafe6fabed39b3e5c9bd32690e
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

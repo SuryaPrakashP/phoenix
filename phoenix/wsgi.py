@@ -1,15 +1,16 @@
 """
-WSGI config for phoenix project.
+WSGI config for myshop project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
+https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 """
 
 import os
 
 from django.core.wsgi import get_wsgi_application
+<<<<<<< HEAD
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "phoenix.settings")
 application = get_wsgi_application()
 
@@ -37,3 +38,9 @@ application = get_wsgi_application()
 
 # application = hercules.wsgi.application
 # application = PassengerPathInfoFix(application)
+=======
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'phoenix.settings')
+
+application = get_wsgi_application()
+>>>>>>> 9d8f6fa8ea11d7eafe6fabed39b3e5c9bd32690e
